@@ -1,0 +1,13 @@
+resources:
+- name: flight-school
+  type: git
+  source:
+    uri: https://github.com/ronaldvanderrest/flight-school
+    branch: master
+
+jobs:
+- name: test-app
+  plan:
+  - get: flight-school
+  - task: test
+    file: flight-school/build.yml
